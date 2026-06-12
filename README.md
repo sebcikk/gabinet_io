@@ -5,3 +5,6 @@ siema
 czy to zadziała
 
 test nr 2
+
+# test
+test
