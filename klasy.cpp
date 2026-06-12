@@ -5,6 +5,11 @@ using namespace std;
 
 class Recepta;
 class Skierowanie;
+class Lek;
+class Gabinet;
+class Kartoteka;
+class Wizyta;
+class Usluga;
 
 class Osoba {
 	string imie;
@@ -49,7 +54,6 @@ public:
 		specjalizacja = s;
 	}
 };
-class dfd fdfdff;
 
 class Pacjent : public Osoba {
 	int rok_urodzenia;
