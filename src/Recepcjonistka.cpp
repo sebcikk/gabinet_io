@@ -1,0 +1,1 @@
+#include "Recepcjonistka.hpp"

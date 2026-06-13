@@ -1,2 +1,18 @@
-/.vs
-CMakeLists.txt
+# Katalogi budowania (generowane przez VS i VS Code)
+build/
+out/
+.vs/
+.vscode/
+
+# Pliki wykonywalne i binarne
+*.exe
+*.out
+*.app
+*.o
+*.obj
+*.pdb
+*.ilk
+
+# Logi systemowe i chmury tagów
+*.log
+.DS_Store
