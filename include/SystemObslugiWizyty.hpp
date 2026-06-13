@@ -10,8 +10,8 @@
 class SystemObslugiWizyty
 {
 public:
-    bool wystawRecepte(Pacjent pacjent, Lekarz lekarz, Lek lek, std::string dawkowanie, std::string uwagi);
-    bool wystawSkierowanie(Pacjent pacjent, Lekarz lekarz, std::string cel_skierowania, std::string uwagi);
+    bool wystawRecepte(Pacjent pacjent, Lekarz lekarz, Lek lek, string dawkowanie, string uwagi);
+    bool wystawSkierowanie(Pacjent pacjent, Lekarz lekarz, string cel_skierowania, string uwagi);
     Kartoteka sprawdzKartoteke(Pacjent &pacjent);
 };
 

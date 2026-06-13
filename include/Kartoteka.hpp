@@ -6,21 +6,23 @@
 #include "Recepta.hpp"
 #include <vector>
 
+using namespace std;
+
 class Kartoteka
 {
 private:
-    std::vector<Wizyta> historia_wizyt;
-    std::vector<Skierowanie> historia_skierowan;
-    std::vector<Recepta> historia_recept;
+    vector<Wizyta> historia_wizyt;
+    vector<Skierowanie> historia_skierowan;
+    vector<Recepta> historia_recept;
 
 public:
     Kartoteka() = default;
-    std::vector<Wizyta> getHistoria_wizyt();
-    void setHistoria_wizyt(std::vector<Wizyta> hw);
-    std::vector<Skierowanie> getHistoria_skierowan();
-    void setHistoria_skierowan(std::vector<Skierowanie> hs);
-    std::vector<Recepta> getHistoria_recept();
-    void setHistoria_recept(std::vector<Recepta> hr);
+    vector<Wizyta> getHistoria_wizyt();
+    void setHistoria_wizyt(vector<Wizyta> hw);
+    vector<Skierowanie> getHistoria_skierowan();
+    void setHistoria_skierowan(vector<Skierowanie> hs);
+    vector<Recepta> getHistoria_recept();
+    void setHistoria_recept(vector<Recepta> hr);
 };
 
 #endif

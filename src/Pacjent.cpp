@@ -9,5 +9,5 @@ int Pacjent::getRok_Urodzenia() { return rok_urodzenia; }
 void Pacjent::setRok_Urodzenia(int r_u) { rok_urodzenia = r_u; }
 void Pacjent::getKartoteka()
 {
-    cout << "Pobieranie danych kartoteki dla pacjenta PESEL: " << pesel << std::endl;
+    cout << "Pobieranie danych kartoteki dla pacjenta PESEL: " << pesel << endl;
 }
