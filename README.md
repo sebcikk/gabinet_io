@@ -1,10 +1,3 @@
-# gabinet_io
-siema
+# System Zarządzania Gabinetem Medycznym (gabinet_io)
 
-# nei wiem jaki ten system działa
-czy to zadziała
-
-test nr 2
-
-# test
-test
+Projekt realizowany w ramach przedmiotu **Inżynieria Oprogramowania** na AGH.
