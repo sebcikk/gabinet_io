@@ -75,3 +75,13 @@ public:
 		rok_urodzenia = ru;
 	}
 };
+class Gabinet {
+private:
+	string nr_gabinetu;
+	string typ_gabinetu;
+public:
+	string getNr_gabinetu() { return nr_gabinetu; }
+	void setNr_gabinetu(string nr) { nr_gabinetu = nr; }
+	string getTyp_gabinetu() { return typ_gabinetu; }
+	void setTyp_gabinetu(string typ) { typ_gabinetu = typ; }
+};
