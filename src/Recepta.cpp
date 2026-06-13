@@ -16,3 +16,5 @@ void Recepta::dodajLek(Lek *lek)
 string Recepta::getDawkowanie() { return dawkowanie; }
 string Recepta::getUwagi() { return uwagi; }
 int Recepta::getLiczbaLekow() { return liczbaLekow; }
+void Recepta::setDawkowanie(string d) { dawkowanie = d; }
+void Recepta::setUwagi(string u) { uwagi = u; }

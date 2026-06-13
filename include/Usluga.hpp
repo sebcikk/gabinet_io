@@ -15,5 +15,7 @@ public:
     Usluga(string n, int czas);
     string getNazwa();
     int getWymagany_czas();
+    void setNazwa(string n);
+    void setWymagany_czas(int czas);
 };
 #endif

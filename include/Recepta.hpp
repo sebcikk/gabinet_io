@@ -30,5 +30,7 @@ public:
     string getDawkowanie();
     string getUwagi();
     int getLiczbaLekow();
+    void setDawkowanie(string d);
+    void setUwagi(string u);
 };
 #endif

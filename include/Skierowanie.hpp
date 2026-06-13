@@ -22,5 +22,7 @@ public:
     Skierowanie(Pacjent *p, Lekarz *l, string cel, string u);
     string getCel_skierowania();
     string getUwagi();
+    void setCel_skierowania(string cel);
+    void setUwagi(string u);
 };
 #endif
