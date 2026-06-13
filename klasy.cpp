@@ -18,6 +18,14 @@ class Osoba {
 	string imie;
 	string nazwisko;
 public:
+
+	Osoba() {};
+
+	Osoba(string i, string n) {
+		imie = i;
+		nazwisko = n;
+	};
+
 	string getImie() {
 		return imie;
 	}
@@ -33,6 +41,8 @@ public:
 	void setImie(string n) {
 		nazwisko = n;
 	}
+
+
 };
 
 class Recepcjonistka : public Osoba {};
@@ -86,8 +96,13 @@ public:
 		return rok_urodzenia;
 	}
 
-	void setRok_Urodzenia(int ru) {
-		rok_urodzenia = ru;
+	void setRok_Urodzenia(int r_u) {
+		rok_urodzenia = r_u;
+	}
+
+	Pacjent(Osoba(string i, string n), int r_u, string p) {
+		rok_urodzenia = r_u;
+		pesel = p;
 	}
 };
 
