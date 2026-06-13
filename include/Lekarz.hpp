@@ -25,7 +25,7 @@ private:
     int liczbaRecept;
 
 public:
-    Lekarz(); // Usunięte "{}" – sam średnik! Implementacja jest w .cpp
+    Lekarz();
 
     string getTytul();
     void setTytul(string t);

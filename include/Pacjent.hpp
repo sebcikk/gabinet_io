@@ -1,24 +1,24 @@
 #ifndef PACJENT_HPP
 #define PACJENT_HPP
+
 #include "Osoba.hpp"
-#include <iostream>
 
 using namespace std;
 
 class Pacjent : public Osoba
 {
+private:
     int rok_urodzenia;
     string pesel;
 
 public:
-    Pacjent(Osoba(string i, string n), int r_u, string p);
+    Pacjent(string i, string n, int r_u, string p);
 
     string getPesel();
-
     void setPesel(string p);
-
     int getRok_Urodzenia();
-
     void setRok_Urodzenia(int r_u);
+    void getKartoteka();
 };
+
 #endif
