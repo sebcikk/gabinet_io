@@ -4,25 +4,21 @@
 
 using namespace std;
 
-class Osoba
-{
+class Osoba {
 protected:
     string imie;
     string nazwisko;
 
 public:
-    Osoba() {};
+    Osoba(string i = "", string n = "")
+        : imie(i), nazwisko(n) {
+    }
 
-    Osoba(string i, string n);
+    string getImie() { return imie; }
+    string getNazwisko() { return nazwisko; }
 
-    virtual ~Osoba() = 0;
-
-    string getImie();
-
-    void setImie(string i);
-
-    string getNazwisko();
-
-    void setNazwisko(string n);
+    void setImie(string i) { imie = i; }
+    void setNazwisko(string n) { nazwisko = n; }
 };
+
 #endif
