@@ -38,7 +38,7 @@ public:
 		return nazwisko;
 	}
 
-	void setImie(string n) {
+	void setNazwisko(string n) {
 		nazwisko = n;
 	}
 
