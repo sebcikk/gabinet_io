@@ -95,13 +95,15 @@ public:
 
 class Lek {
 private:
+	string nazwa;
 	bool na_recepte;
 	float refundacja;
 public:
+	Lek() : nazwa(""), na_recepte(false), refundacja(0.0f) {}
+	Lek(string n, bool nr, float ref) : nazwa(n), na_recepte(nr), refundacja(ref) {}
+	string getNazwa() { return nazwa; }
 	bool getNa_recepte() { return na_recepte; }
-	void setNa_recepte(bool nr) { na_recepte = nr; }
 	float getRefundacja() { return refundacja; }
-	void setRefundacja(float ref) { refundacja = ref; }
 };
 
 class Recepta {
