@@ -85,3 +85,13 @@ public:
 	string getTyp_gabinetu() { return typ_gabinetu; }
 	void setTyp_gabinetu(string typ) { typ_gabinetu = typ; }
 };
+class Lek {
+private:
+	bool na_recepte;
+	float refundacja;
+public:
+	bool getNa_recepte() { return na_recepte; }
+	void setNa_recepte(bool nr) { na_recepte = nr; }
+	float getRefundacja() { return refundacja; }
+	void setRefundacja(float ref) { refundacja = ref; }
+};
