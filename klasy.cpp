@@ -3,6 +3,9 @@
 
 using namespace std;
 
+// Stała określająca maksymalny rozmiar tablic relacji w systemie
+const int MAX_ELEMENTOW = 100;
+
 class Recepta;
 class Skierowanie;
 class Lek;
@@ -34,25 +37,37 @@ public:
 
 class Recepcjonistka : public Osoba {};
 
+class Gabinet {
+private:
+	string nr_gabinetu;
+	string typ_gabinetu;
+public:
+	string getNr_gabinetu() { return nr_gabinetu; }
+	void setNr_gabinetu(string nr) { nr_gabinetu = nr; }
+	string getTyp_gabinetu() { return typ_gabinetu; }
+	void setTyp_gabinetu(string typ) { typ_gabinetu = typ; }
+};
+
 class Lekarz : public Osoba {
+private:
 	string tytul;
 	string specjalizacja;
+	Gabinet* gabinet;
+
+	Skierowanie* skierowania[MAX_ELEMENTOW];
+	int liczbaSkierowan;
+	Recepta* recepty[MAX_ELEMENTOW];
+	int liczbaRecept;
 public:
-	string getTytul() {
-		return tytul;
-	}
+	Lekarz() : gabinet(nullptr), liczbaSkierowan(0), liczbaRecept(0) {}
 
-	void setTytul(string t) {
-		tytul = t;
-	}
+	string getTytul() { return tytul; }
+	void setTytul(string t) { tytul = t; }
+	string getSpecjalizacja() { return specjalizacja; }
+	void setSpecjalizacja(string s) { specjalizacja = s; }
+	void setGabinet(Gabinet* g) { gabinet = g; }
+	Gabinet* getGabinet() { return gabinet; }
 
-	string getSpecjalizacja() {
-		return specjalizacja;
-	}
-
-	void setSpecjalizacja(string s) {
-		specjalizacja = s;
-	}
 };
 
 class Pacjent : public Osoba {
@@ -76,16 +91,7 @@ public:
 	}
 };
 
-class Gabinet {
-private:
-	string nr_gabinetu;
-	string typ_gabinetu;
-public:
-	string getNr_gabinetu() { return nr_gabinetu; }
-	void setNr_gabinetu(string nr) { nr_gabinetu = nr; }
-	string getTyp_gabinetu() { return typ_gabinetu; }
-	void setTyp_gabinetu(string typ) { typ_gabinetu = typ; }
-};
+
 
 class Lek {
 private:
