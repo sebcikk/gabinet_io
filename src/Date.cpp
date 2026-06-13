@@ -33,3 +33,13 @@ bool Date::operator>=(const Date &druga) const
 {
     return !(*this < druga);
 }
+
+ostream &operator<<(ostream &os, const Date &d)
+{
+    os << d.rok << "-"
+       << setw(2) << setfill('0') << d.miesiac << "-"
+       << setw(2) << setfill('0') << d.dzien << " "
+       << setw(2) << setfill('0') << d.godzina << ":"
+       << setw(2) << setfill('0') << d.minuta;
+    return os;
+}

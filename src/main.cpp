@@ -15,6 +15,6 @@ int main()
 	l1.setSpecjalizacja("Kardiolog");
 
 	SystemRezerwacjiTerminow srt;
-	srt.dodajWolnyTermin(l1, "2026-06-15 10:00");
+	srt.dodajWolnyTermin(l1, {2026, 6, 15, 10, 0});
 	return 0;
 }
