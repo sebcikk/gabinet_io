@@ -84,6 +84,11 @@ class Pacjent : public Osoba {
 	int rok_urodzenia;
 	string pesel;
 public:
+	Pacjent(Osoba(string i, string n), int r_u, string p) {
+		rok_urodzenia = r_u;
+		pesel = p;
+	}
+
 	string getPesel() {
 		return pesel;
 	}
@@ -100,10 +105,7 @@ public:
 		rok_urodzenia = r_u;
 	}
 
-	Pacjent(Osoba(string i, string n), int r_u, string p) {
-		rok_urodzenia = r_u;
-		pesel = p;
-	}
+	
 };
 
 
