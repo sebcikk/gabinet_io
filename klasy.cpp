@@ -134,9 +134,22 @@ class Skierowanie {
 private:
 	string cel_skierowania;
 	string uwagi;
+	Pacjent* pacjent;
+	Lekarz* lekarz;
 public:
+	Skierowanie(Pacjent* p, Lekarz* l, string cel, string u)
+		: pacjent(p), lekarz(l), cel_skierowania(cel), uwagi(u) {}
 	string getCel_skierowania() { return cel_skierowania; }
-	void setCel_skierowania(string cel) { cel_skierowania = cel; }
 	string getUwagi() { return uwagi; }
-	void setUwagi(string u) { uwagi = u; }
+};
+
+class Usluga {
+private:
+	string nazwa;
+	int wymagany_czas;
+public:
+	Usluga() : nazwa(""), wymagany_czas(0) {}
+	Usluga(string n, int czas) : nazwa(n), wymagany_czas(czas) {}
+	string getNazwa() { return nazwa; }
+	int getWymagany_czas() { return wymagany_czas; }
 };
