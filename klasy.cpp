@@ -75,6 +75,7 @@ public:
 		rok_urodzenia = ru;
 	}
 };
+
 class Gabinet {
 private:
 	string nr_gabinetu;
@@ -85,6 +86,7 @@ public:
 	string getTyp_gabinetu() { return typ_gabinetu; }
 	void setTyp_gabinetu(string typ) { typ_gabinetu = typ; }
 };
+
 class Lek {
 private:
 	bool na_recepte;
@@ -94,4 +96,26 @@ public:
 	void setNa_recepte(bool nr) { na_recepte = nr; }
 	float getRefundacja() { return refundacja; }
 	void setRefundacja(float ref) { refundacja = ref; }
+};
+
+class Recepta {
+private:
+	string dawkowanie;
+	string uwagi;
+public:
+	string getDawkowanie() { return dawkowanie; }
+	void setDawkowanie(string d) { dawkowanie = d; }
+	string getUwagi() { return uwagi; }
+	void setUwagi(string u) { uwagi = u; }
+};
+
+class Skierowanie {
+private:
+	string cel_skierowania;
+	string uwagi;
+public:
+	string getCel_skierowania() { return cel_skierowania; }
+	void setCel_skierowania(string cel) { cel_skierowania = cel; }
+	string getUwagi() { return uwagi; }
+	void setUwagi(string u) { uwagi = u; }
 };
