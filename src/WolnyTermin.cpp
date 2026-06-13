@@ -1,7 +1,7 @@
 #include "WolnyTermin.hpp"
 
-Date WolnyTermin::getTermin_wizyty() { return termin_wizyty; }
-void WolnyTermin::setTermin_wizyty(Date date) { termin_wizyty = date; }
+Date WolnyTermin::getTerminWizyty() { return termin_wizyty; }
+void WolnyTermin::setTerminWizyty(Date termin) { termin_wizyty = termin; }
 void WolnyTermin::setWizyta(Usluga u)
 {
     // TODO

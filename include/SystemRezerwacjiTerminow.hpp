@@ -13,7 +13,7 @@ class SystemRezerwacjiTerminow
 {
 public:
     bool dodajWizyte(Pacjent &pacjent, Usluga usluga, WolnyTermin wolny_termin);
-    bool anulujWizyte(Wizyta wizyta);
+    bool anulujWizyte(Wizyta &wizyta);
     bool dodajWolnyTermin(Lekarz &lekarz, Date date);
 };
 
