@@ -110,11 +110,24 @@ class Recepta {
 private:
 	string dawkowanie;
 	string uwagi;
+	Pacjent* pacjent;
+	Lekarz* lekarz;
+
+	Lek* leki[MAX_ELEMENTOW];
+	int liczbaLekow;
 public:
+	Recepta(Pacjent* p, Lekarz* l, string d, string u)
+		: pacjent(p), lekarz(l), dawkowanie(d), uwagi(u), liczbaLekow(0) {}
+
+	void dodajLek(Lek* lek) {
+		if (liczbaLekow < MAX_ELEMENTOW) {
+			leki[liczbaLekow] = lek;
+			liczbaLekow++;
+		}
+	}
 	string getDawkowanie() { return dawkowanie; }
-	void setDawkowanie(string d) { dawkowanie = d; }
 	string getUwagi() { return uwagi; }
-	void setUwagi(string u) { uwagi = u; }
+	int getLiczbaLekow() { return liczbaLekow; }
 };
 
 class Skierowanie {
