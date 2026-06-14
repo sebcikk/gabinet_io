@@ -5,8 +5,8 @@ Pacjent::Pacjent(string i, string n, int r_u, string p)
 
 string Pacjent::getPesel() { return pesel; }
 void Pacjent::setPesel(string p) { pesel = p; }
-int Pacjent::getRok_Urodzenia() { return rok_urodzenia; }
-void Pacjent::setRok_Urodzenia(int r_u) { rok_urodzenia = r_u; }
+int Pacjent::getRok_urodzenia() { return rok_urodzenia; }
+void Pacjent::setRok_urodzenia(int r_u) { rok_urodzenia = r_u; }
 void Pacjent::getKartoteka()
 {
     cout << "Pobieranie danych kartoteki dla pacjenta PESEL: " << pesel << endl;

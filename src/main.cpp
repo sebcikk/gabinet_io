@@ -7,75 +7,152 @@
 #include "WolnyTermin.hpp"
 #include "Wizyta.hpp"
 #include <iostream>
+#include <limits>
 
 using namespace std;
 
 int main()
 {
-	cout << "========================================" << endl;
-	cout << "--- START TESTOWANIA SYSTEMU GABINETU ---" << endl;
-	cout << "========================================" << endl;
+    cout << "---START SYSTEMU---\n";
 
-	// 1. UTWORZENIE AKTÓRÓW I STRUKTUR DANYCH
-	cout << "\n[TEST] Tworzenie obiektow podstawowych..." << endl;
+    SystemRezerwacjiTerminow systemRezerwacji;
+    SystemObslugiWizyty systemObslugi;
 
-	Pacjent pacjent1("Jan", "Kowalski", 1990, "90010112345");
+    Pacjent p1("Jan", "Kowalski", 1990, "12345678901");
+    Pacjent p2("Anna", "Nowak", 1985, "98765432109");
 
-	Lekarz lekarz1;
-	lekarz1.setImie("Anna");
-	lekarz1.setNazwisko("Nowak");
-	lekarz1.setSpecjalizacja("Kardiolog");
+    Lekarz l1;
+    l1.setImie("Adam");
+    l1.setNazwisko("Wisniewski");
+    l1.setTytul("dr");
+    l1.setSpecjalizacja("Kardiolog");
 
-	Usluga usluga1("Konsultacja kardiologiczna", 30);
-	Lek lek1("Polocard", false, 0.0f);
+    Lekarz l2;
+    l2.setImie("Maria");
+    l2.setNazwisko("Zielinska");
+    l2.setTytul("dr");
+    l2.setSpecjalizacja("Dermatolog");
 
-	// 2. TEST MODU£U: SYSTEM REZERWACJI TERMINÓW
-	cout << "\n[TEST] Modul: SystemRezerwacjiTerminow" << endl;
-	SystemRezerwacjiTerminow srt;
+    Usluga konsultacja("Konsultacja", 30);
+    WolnyTermin wolnyTermin;
+    wolnyTermin.setTerminWizyty({2026, 6, 20, 10, 0});
 
-	// Przygotowanie wolnego terminu
-	WolnyTermin wolnyTermin1;
-	wolnyTermin1.setTermin_wizyty({ 2026, 6, 15, 10, 0 });
+    systemRezerwacji.dodajWolnyTermin(l1, {2026, 6, 20, 10, 0});
+    systemRezerwacji.dodajWolnyTermin(l2, {2026, 6, 21, 9, 0});
 
-	// Test dodawania wolnego terminu dla lekarza
-	srt.dodajWolnyTermin(lekarz1, wolnyTermin1.getTermin_wizyty());
+    int wybor;
 
-	// Test umawiania wizyty pacjenta
-	srt.dodajWizyte(pacjent1, usluga1, wolnyTermin1);
+    do {
+        cout << "\n===== SYSTEM OBSLUGI GABINETU =====\n";
+        cout << "1. Rejestracja wizyty\n";
+        cout << "2. Odwolanie wizyty\n";
+        cout << "3. Podglad kartoteki\n";
+        cout << "4. Wystawienie recepty\n";
+        cout << "5. Wystawienie skierowania\n";
+        cout << "6. Dodanie wolnego terminu\n";
+        cout << "0. Wyjscie\n";
+        cout << "Wybor: ";
 
-	// Test anulowania wizyty
-	Wizyta wizytaDoAnulowania;
-	wizytaDoAnulowania.setUsluga(usluga1);
-	srt.anulujWizyte(wizytaDoAnulowania);
+        cin >> wybor;
 
+        switch (wybor) {
 
-	// 3. TEST MODU£U: SYSTEM OBS£UGI WIZYTY
-	cout << "\n[TEST] Modul: SystemObslugiWizyty" << endl;
-	SystemObslugiWizyty sow;
+        case 1:
+        {
+            systemRezerwacji.dodajWizyte(p1, konsultacja, wolnyTermin);
+            break;
+        }
 
-	// Test sprawdzenia kartoteki pacjenta
-	sow.sprawdzKartoteke(pacjent1);
+        case 2:
+        {
+            Wizyta wizyta;
+            wizyta.setUsluga(konsultacja);
+            systemRezerwacji.anulujWizyte(wizyta);
+            break;
+        }
 
-	// Test wystawienia recepty
-	sow.wystawRecepte(pacjent1, lekarz1, lek1, "1x dziennie rano", "Przyjmowac po posilku");
+        case 3:
+        {
+            systemObslugi.sprawdzKartoteke(p1);
+            break;
+        }
 
-	// Test wystawienia skierowania
-	sow.wystawSkierowanie(pacjent1, lekarz1, "Badanie EKG", "Pilna kontrola");
+        case 4:
+        {
+            string nazwa_leku;
+            string dawkowanie;
+            string uwagi;
+            float refundacja;
 
+            cout << "Nazwa leku: ";
+            cin >> nazwa_leku;
 
-	// 4. TEST DODATKOWYCH FUNKCJONALNOŒCI KLAS
-	cout << "\n[TEST] Pozostale metody obiektowe" << endl;
+            cout << "Refundacja: ";
+            cin >> refundacja;
 
-	// Pobieranie kartoteki bezpoœrednio z obiektu pacjenta
-	pacjent1.getKartoteka();
+            cin.ignore();
 
-	// Przypisanie us³ugi do wolnego terminu i jego zwolnienie
-	wolnyTermin1.setWizyta(usluga1);
-	wolnyTermin1.zwolnijTermin();
+            cout << "Dawkowanie: ";
+            getline(cin, dawkowanie);
 
-	cout << "\n========================================" << endl;
-	cout << "---   KONIEC TESTOW SYSTEM ZALICZONY ---" << endl;
-	cout << "========================================" << endl;
+            cout << "Uwagi: ";
+            getline(cin, uwagi);
 
-	return 0;
+            Lek lek(nazwa_leku, true, refundacja);
+
+            systemObslugi.wystawRecepte(
+                p1,
+                l1,
+                lek,
+                dawkowanie,
+                uwagi
+            );
+
+            break;
+        }
+
+        case 5:
+        {
+            string cel;
+            string uwagi;
+
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+            cout << "Cel skierowania: ";
+            getline(cin, cel);
+
+            cout << "Uwagi: ";
+            getline(cin, uwagi);
+
+            systemObslugi.wystawSkierowanie(
+                p1,
+                l1,
+                cel,
+                uwagi
+            );
+
+            break;
+        }
+
+        case 6:
+        {
+            Date termin;
+
+            cout << "Podaj rok miesiac dzien godzine minute: ";
+            cin >> termin.rok >> termin.miesiac >> termin.dzien >> termin.godzina >> termin.minuta;
+
+            systemRezerwacji.dodajWolnyTermin(l1, termin);
+
+            break;
+        }
+
+        case 0:
+            cout << "Koniec programu.\n";
+            break;
+
+        default:
+            cout << "Niepoprawna opcja.\n";
+        }
+
+    } while (wybor != 0);
 }
