@@ -18,6 +18,7 @@ int main()
     SystemRezerwacjiTerminow systemRezerwacji;
     SystemObslugiWizyty systemObslugi;
 
+    // dodawanie pacjentow i lekarzy
     Pacjent p1("Jan", "Kowalski", 1990, "12345678901");
     Pacjent p2("Anna", "Nowak", 1985, "98765432109");
 
@@ -37,11 +38,13 @@ int main()
     WolnyTermin wolnyTermin;
     wolnyTermin.setTerminWizyty({2026, 6, 20, 10, 0});
 
+    // dodawanie wolnych terminow
     systemRezerwacji.dodajWolnyTermin(l1, {2026, 6, 20, 10, 0});
     systemRezerwacji.dodajWolnyTermin(l2, {2026, 6, 21, 9, 0});
 
     int wybor;
 
+    // menu - glowna petla programu
     do {
         cout << "\n===== SYSTEM OBSLUGI GABINETU =====\n";
         cout << "1. Rejestracja wizyty\n";
@@ -57,13 +60,13 @@ int main()
 
         switch (wybor) {
 
-        case 1:
+        case 1: // Rejestracja wizyty
         {
             systemRezerwacji.dodajWizyte(p1, konsultacja, wolnyTermin);
             break;
         }
-
-        case 2:
+        
+        case 2: // anulacja wizyty
         {
             Wizyta wizyta;
             wizyta.setUsluga(konsultacja);
@@ -71,13 +74,13 @@ int main()
             break;
         }
 
-        case 3:
+        case 3: // sprawdzanie kartoteki
         {
             systemObslugi.sprawdzKartoteke(p1);
             break;
         }
 
-        case 4:
+        case 4: // wystawianie recepty
         {
             string nazwa_leku;
             string dawkowanie;
@@ -111,7 +114,7 @@ int main()
             break;
         }
 
-        case 5:
+        case 5: // wystawianie skierowania
         {
             string cel;
             string uwagi;
@@ -134,7 +137,7 @@ int main()
             break;
         }
 
-        case 6:
+        case 6: // dodawanie wolnego terminu
         {
             Date termin;
 
