@@ -13,8 +13,8 @@ private:
 
 public:
     WolnyTermin() = default;
-    Date getTermin_wizyty();
-    void setTermin_wizyty(Date date);
+    Date getTerminWizyty();
+    void setTerminWizyty(Date termin_wizyty);
     void setWizyta(Usluga u);
     void zwolnijTermin();
 };

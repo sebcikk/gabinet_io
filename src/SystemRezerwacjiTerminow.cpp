@@ -2,13 +2,13 @@
 
 bool SystemRezerwacjiTerminow::dodajWizyte(Pacjent &pacjent, Usluga usluga, WolnyTermin wolny_termin)
 {
-    Date d = wolny_termin.getTermin_wizyty();
+    Date d = wolny_termin.getTerminWizyty();
     cout << "Rezerwacja terminu: " << d.rok << "-" << d.miesiac << "-" << d.dzien
          << " dla " << pacjent.getImie() << endl;
     return true;
 }
 
-bool SystemRezerwacjiTerminow::anulujWizyte(Wizyta wizyta)
+bool SystemRezerwacjiTerminow::anulujWizyte(Wizyta &wizyta)
 {
     cout << "Anulowanie wizyty." << endl;
     return true;

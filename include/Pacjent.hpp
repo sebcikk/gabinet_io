@@ -16,8 +16,8 @@ public:
 
     string getPesel();
     void setPesel(string p);
-    int getRok_Urodzenia();
-    void setRok_Urodzenia(int r_u);
+    int getRok_urodzenia();
+    void setRok_urodzenia(int r_u);
     void getKartoteka();
 };
 
