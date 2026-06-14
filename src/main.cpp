@@ -9,8 +9,7 @@
 #include <iostream>
 #include <limits>
 
-using namespace std;
-
+using namespace std;//s
 int main()
 {
     cout << "---START SYSTEMU---\n";
