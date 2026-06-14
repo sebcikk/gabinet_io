@@ -8,7 +8,7 @@
 #include "Wizyta.hpp"
 #include <iostream>
 #include <limits>
-//a
+
 using namespace std;
 int main()
 {
