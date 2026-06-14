@@ -1,24 +1,28 @@
 #ifndef OSOBA_HPP
 #define OSOBA_HPP
 #include <iostream>
+#include <string>
 
 using namespace std;
 
-class Osoba {
+class Osoba
+{
 protected:
     string imie;
     string nazwisko;
 
 public:
-    Osoba(string i = "", string n = "")
-        : imie(i), nazwisko(n) {
-    }
+    Osoba() {}; // Konstruktor domyślny
 
-    string getImie() { return imie; }
-    string getNazwisko() { return nazwisko; }
+    Osoba(string i, string n);
 
-    void setImie(string i) { imie = i; }
-    void setNazwisko(string n) { nazwisko = n; }
+    // Czysto wirtualny destruktor (wymusza polimorfizm i rozwiązuje problem)
+    virtual ~Osoba() = 0;
+
+    string getImie();
+    void setImie(string i);
+
+    string getNazwisko();
+    void setNazwisko(string n);
 };
-
 #endif

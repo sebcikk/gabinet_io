@@ -11,5 +11,6 @@ include_directories(include)
 # Automatycznie pobierz wszystkie pliki .cpp z folderu src
 file(GLOB SOURCES "src/*.cpp")
 
+
 # Tworzymy plik wykonywalny programu
 add_executable(gabinet_io ${SOURCES})

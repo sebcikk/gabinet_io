@@ -3,12 +3,9 @@
 #include "SystemRezerwacjiTerminow.hpp"
 #include "SystemObslugiWizyty.hpp"
 #include "Lek.hpp"
+#include "Usluga.hpp"
 #include "WolnyTermin.hpp"
-#include "Date.hpp"
-#include "Gabinet.hpp"
-#include "Kartoteka.hpp"
-#include "Osoba.hpp"
-
+#include "Wizyta.hpp"
 #include <iostream>
 #include <limits>
 
